@@ -1,64 +1,47 @@
-# ICP DAO de Condomínio — Template (4 Canisters)
+# Condominium DAO on ICP
 
-**Arquitetura (4 canisters):**
-1. `frontend` (assets): SPA React (Vite) — navegação Dashboard, Votações, Financeiro e Documentos.
-2. `governance` (Motoko): esqueleto de DAO (propostas, votos) — **placeholders**, não integrado ao front.
-3. `treasury` (Motoko): esqueleto financeiro (balanço, registro) — **placeholders**, não integrado ao front.
-4. `records` (Motoko): esqueleto de atas/documentos — **placeholders**, não integrado ao front.
+## Problem Context
+Condominium management often faces recurring challenges: lack of transparency in decision-making, poor communication between the building manager and residents, bureaucracy in financial administration, and limited access to official documents such as minutes and regulations.  
+In in-person meetings, participation is usually low, decisions are questioned, and information is scattered across different channels, which increases mistrust and reduces community engagement.
 
-> O front-end funciona localmente como SPA. Os canisters de backend são mínimos com comentários curtos e **não** são chamados pelo front por design.
+## Proposed Solution
+This project demonstrates how the **Internet Computer (ICP)** can be used to create a decentralized condominium management solution. The central idea is to apply distributed governance concepts, allowing decisions, finances, and documents to be organized in a reliable and easily accessible system.
 
-## Requisitos
-- Node 18+
-- `dfx` (Internet Computer SDK) instalado e configurado
+The application is structured into **four canisters**:
 
-## Como rodar localmente (somente front)
+1. **Frontend (assets)**  
+   A React interface that provides residents with an intuitive dashboard, including sections for voting, finances, documents, and general overview.  
+
+2. **Governance (Motoko)**  
+   Canister designed for proposals and voting. It allows decisions to be created and registered transparently.  
+
+3. **Treasury (Motoko)**  
+   Canister responsible for managing financial information such as balance and income/expense records.  
+
+4. **Records (Motoko)**  
+   Canister dedicated to registering and consulting official documents and meeting minutes, ensuring accessible and immutable history.  
+
+Currently, the front-end works with local mock data for prototyping purposes, while the backend canisters serve as skeletons for future integrations.
+
+## Objectives
+- Provide greater transparency in condominium management.  
+- Facilitate resident participation in votes and deliberations.  
+- Centralize documents and records in a single environment.  
+- Improve communication between management and the community.  
+
+## How to Run the Project
+### Run only the front-end
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## Como compilar e fazer deploy local (todos os canisters)
+### Compile and deploy locally (all canisters)
 ```bash
-# Em um terminal:
+# In one terminal
 dfx start --background
 
-# Em outro terminal (na raiz do projeto):
+# In another terminal
 dfx deploy
-```
-
-Após o deploy, o `dfx` mostrará a URL do canister de `frontend` para acessar a SPA buildada.
-
----
-
-## Estrutura
-```text
-icp-dao-condominio-4-canisters/
-├─ dfx.json
-├─ canisters/
-│  ├─ governance/main.mo
-│  ├─ treasury/main.mo
-│  └─ records/main.mo
-└─ frontend/
-   ├─ index.html
-   ├─ package.json
-   ├─ tsconfig.json
-   ├─ vite.config.ts
-   └─ src/
-      ├─ main.tsx
-      ├─ App.tsx
-      ├─ styles.css
-      ├─ components/Nav.tsx
-      └─ pages/
-         ├─ Dashboard.tsx
-         ├─ Votacoes.tsx
-         ├─ Financeiro.tsx
-         └─ Documentos.tsx
-```
-
-## Próximos passos (quando quiser integrar)
-- Adicionar `@dfinity/agent` ao front e gerar bindings dos canisters via `dfx` para chamadas candid.
-- Modelar estado dos canisters e endpoints (ex.: `createProposal`, `vote`, `getBalance`, `addRecord`).
-- Adicionar autenticação via Internet Identity.
 ```
