@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>DAO do Condomínio</h1>
+        <h1>Condorganiza</h1>
         <p className="subtitle">Transparência • Voto • Prestação de contas</p>
       </header>
 
