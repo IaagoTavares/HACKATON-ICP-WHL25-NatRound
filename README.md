@@ -1,4 +1,7 @@
-# Condorganiza
+
+
+![Condorganiza](./img/Condorganiza.PNG)
+
 
 ## Problem Context
 Condominium management often faces recurring challenges: lack of transparency in decision-making, poor communication between the building manager and residents, bureaucracy in financial administration, and limited access to official documents such as minutes and regulations.  
