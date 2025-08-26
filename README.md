@@ -1,6 +1,6 @@
 
 
-![Condorganiza](./img/Condorganiza.PNG)
+![Condorganiza](./img/Condorganiza.png)
 
 
 ## Problem Context
