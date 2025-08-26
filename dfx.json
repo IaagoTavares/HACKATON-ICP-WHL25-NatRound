@@ -1,0 +1,25 @@
+{
+  "canisters": {
+    "frontend": {
+      "type": "assets",
+      "source": [
+        "frontend/dist"
+      ],
+      "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    },
+    "governance": {
+      "type": "motoko",
+      "main": "canisters/governance/main.mo"
+    },
+    "treasury": {
+      "type": "motoko",
+      "main": "canisters/treasury/main.mo"
+    },
+    "records": {
+      "type": "motoko",
+      "main": "canisters/records/main.mo"
+    }
+  },
+  "output_env_file": ".dfx/local/canister_ids.sh",
+  "version": 1
+}
